@@ -1,8 +1,18 @@
 # frozen_string_literal: true
 
-require_relative "ventrata/version"
+require "httparty"
+require "json"
+require "ventrata/version"
+require "ventrata/base"
+require "ventrata/supplier"
+require "ventrata/product"
+require "ventrata/availability"
+require "ventrata/booking"
 
 module Ventrata
   class Error < StandardError; end
-  # Your code goes here...
+
+  class << self
+    attr_accessor :api_key
+  end
 end
