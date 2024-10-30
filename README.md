@@ -273,10 +273,6 @@ Ventrata::Availability.resources(body)
 List bookings in the system given certain parameters.
 
 ```ruby
-Ventrata::Booking.list
-```
-
-```ruby
 params = {
   resellerReference: 'The reseller reference on the booking',
   supplierReference: 'The reference provided by the supplier',
