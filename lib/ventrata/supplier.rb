@@ -1,12 +1,12 @@
 module Ventrata
   class Supplier < Base
     class << self
-      def list
-        get '/suppliers'
+      def list(capabilities: [])
+        get '/suppliers', {}, capabilities
       end
 
-      def retrieve(id)
-        get "/suppliers/#{id}"
+      def retrieve(id, capabilities: [])
+        get "/suppliers/#{id}", {}, capabilities
       end
     end
   end

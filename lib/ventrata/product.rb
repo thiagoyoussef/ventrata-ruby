@@ -2,11 +2,11 @@ module Ventrata
   class Product < Base
     class << self
       def list(params = {})
-        get '/products', query: params.slice(:categoryId, :destinationId)
+        get '/products', params.slice(:categoryId, :destinationId), params[:capabilities]
       end
 
-      def retrieve(id)
-        get "/products/#{id}"
+      def retrieve(id, params = {})
+        get "/products/#{id}", params.slice(:pickupRequested), params[:capabilities]
       end
     end
   end
